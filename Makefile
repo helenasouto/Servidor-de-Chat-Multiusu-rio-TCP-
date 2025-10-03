@@ -1,43 +1,68 @@
-# Makefile
+# Makefile (versão multi-alvo)
 
 # Compilador
 CXX := g++
 
 # Flags de compilação
-# -std=c++17: Usa o padrão C++17
-# -Wall: Mostra todos os warnings
-# -pthread: Necessário para usar std::thread
-# -Iinclude: Diz ao compilador para procurar headers na pasta 'include'
 CXXFLAGS := -std=c++17 -Wall -pthread -Iinclude
 
-# Pasta dos fontes e dos objetos
+# Pastas
 SRC_DIR := src
 OBJ_DIR := build
 
-# Arquivos fonte
-SRCS := $(wildcard $(SRC_DIR)/*.cpp)
+# --- Definição dos nossos programas (alvos) ---
 
-# Arquivos objeto (compilados)
-OBJS := $(patsubst $(SRC_DIR)/%.cpp, $(OBJ_DIR)/%.o, $(SRCS))
+# Alvo 1: Servidor de Chat
+SERVER_EXEC := chat_server
+SERVER_SRCS := $(SRC_DIR)/server.cpp $(SRC_DIR)/tslog.cpp
+SERVER_OBJS := $(patsubst $(SRC_DIR)/%.cpp, $(OBJ_DIR)/%.o, $(SERVER_SRCS))
 
-# Nome do executável final
-TARGET := test_logger
+# Alvo 2: Cliente do Chat (já preparado para quando criarmos o client.cpp)
+CLIENT_EXEC := chat_client
+CLIENT_SRCS := $(SRC_DIR)/client.cpp $(SRC_DIR)/tslog.cpp
+CLIENT_OBJS := $(patsubst $(SRC_DIR)/%.cpp, $(OBJ_DIR)/%.o, $(CLIENT_SRCS))
 
-# Regra principal: o que fazer quando digitar 'make'
-all: $(TARGET)
+# Alvo 3: O teste original do logger
+TEST_EXEC := test_logger
+TEST_SRCS := $(SRC_DIR)/main.cpp $(SRC_DIR)/tslog.cpp
+TEST_OBJS := $(patsubst $(SRC_DIR)/%.cpp, $(OBJ_DIR)/%.o, $(TEST_SRCS))
 
-# Regra para criar o executável
-$(TARGET): $(OBJS)
+
+# --- Regras de Build ---
+
+# Regra principal: 'make' ou 'make all' vai compilar o servidor e o cliente
+all: $(SERVER_EXEC) $(CLIENT_EXEC)
+
+# Regras de linkagem para cada executável
+$(SERVER_EXEC): $(SERVER_OBJS)
 	$(CXX) $(CXXFLAGS) -o $@ $^
 
-# Regra para compilar cada arquivo .cpp para um .o
+$(CLIENT_EXEC): $(CLIENT_OBJS)
+	$(CXX) $(CXXFLAGS) -o $@ $^
+
+$(TEST_EXEC): $(TEST_OBJS)
+	$(CXX) $(CXXFLAGS) -o $@ $^
+
+# Regra genérica para compilar .cpp para .o
+# Esta regra não muda, ela é inteligente e serve para todos
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp
-	@mkdir -p $(OBJ_DIR) # Cria a pasta 'build' se não existir
+	@mkdir -p $(OBJ_DIR)
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
-# Regra para limpar os arquivos compilados
+# --- Comandos Utilitários ---
+
+# Regra para compilar apenas o servidor
+server: $(SERVER_EXEC)
+
+# Regra para compilar apenas o cliente
+client: $(CLIENT_EXEC)
+
+# Regra para compilar apenas o teste de log
+test_logger: $(TEST_EXEC)
+
+# Regra de limpeza atualizada
 clean:
-	rm -rf $(OBJ_DIR) $(TARGET) meu_log.txt
+	rm -rf $(OBJ_DIR) $(SERVER_EXEC) $(CLIENT_EXEC) $(TEST_EXEC) *.log
 
 # Phony targets não são nomes de arquivos
-.PHONY: all clean
+.PHONY: all clean server client test_logger
