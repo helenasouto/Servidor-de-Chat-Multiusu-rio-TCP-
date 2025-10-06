@@ -1,12 +1,253 @@
-2025-10-03 18:00:15 - Socket do servidor criado com sucesso.
-2025-10-03 18:00:15 - Socket vinculado a porta 8080
-2025-10-03 18:00:15 - Servidor escutando na porta 8080...
-2025-10-03 18:00:16 - Cliente conectado!
-2025-10-03 18:00:16 - Mensagem recebida do cliente: Ola, servidor! Sou o cliente.
-2025-10-03 18:00:16 - Conexão com o cliente fechada. Aguardando próximo...
-2025-10-03 18:00:16 - Cliente conectado!
-2025-10-03 18:00:16 - Mensagem recebida do cliente: Ola, servidor! Sou o cliente.
-2025-10-03 18:00:16 - Conexão com o cliente fechada. Aguardando próximo...
-2025-10-03 18:00:16 - Cliente conectado!
-2025-10-03 18:00:16 - Mensagem recebida do cliente: Ola, servidor! Sou o cliente.
-2025-10-03 18:00:16 - Conexão com o cliente fechada. Aguardando próximo...
+2025-10-06 12:33:26 - Socket do servidor criado com sucesso.
+2025-10-06 12:33:26 - Socket vinculado a porta 8080
+2025-10-06 12:33:26 - Servidor escutando na porta 8080...
+2025-10-06 12:33:34 - Nova conexão aceita: socket 5
+2025-10-06 12:33:34 - Nova conexão aceita: socket 6
+2025-10-06 12:33:34 - Nova conexão aceita: socket 7
+2025-10-06 12:33:34 - Novo cliente adicionado. Total de clientes ativos: 1
+2025-10-06 12:33:34 - Nova conexão aceita: socket 8
+2025-10-06 12:33:34 - Novo cliente adicionado. Total de clientes ativos: 2
+2025-10-06 12:33:34 - Novo cliente adicionado. Total de clientes ativos: 3
+2025-10-06 12:33:34 - Novo cliente adicionado. Total de clientes ativos: 4
+2025-10-06 12:33:34 - Nova conexão aceita: socket 9
+2025-10-06 12:33:34 - Novo cliente adicionado. Total de clientes ativos: 5
+2025-10-06 12:33:34 - Nova conexão aceita: socket 10
+2025-10-06 12:33:34 - Novo cliente adicionado. Total de clientes ativos: 6
+2025-10-06 12:33:34 - Nova conexão aceita: socket 11
+2025-10-06 12:33:34 - Novo cliente adicionado. Total de clientes ativos: 7
+2025-10-06 12:33:34 - Nova conexão aceita: socket 12
+2025-10-06 12:33:34 - Novo cliente adicionado. Total de clientes ativos: 8
+2025-10-06 12:33:34 - Nova conexão aceita: socket 13
+2025-10-06 12:33:34 - Novo cliente adicionado. Total de clientes ativos: 9
+2025-10-06 12:33:34 - Nova conexão aceita: socket 14
+2025-10-06 12:33:34 - Nova conexão aceita: socket 15
+2025-10-06 12:33:34 - Novo cliente adicionado. Total de clientes ativos: 10
+2025-10-06 12:33:34 - Broadcast - Cliente [14]: Olá, servidor! Eu sou o Cliente 10 de 50.
+2025-10-06 12:33:34 - Novo cliente adicionado. Total de clientes ativos: 11
+2025-10-06 12:33:34 - Nova conexão aceita: socket 16
+2025-10-06 12:33:34 - Nova conexão aceita: socket 17
+2025-10-06 12:33:34 - Novo cliente adicionado. Total de clientes ativos: 12
+2025-10-06 12:33:34 - Broadcast - Cliente [16]: Olá, servidor! Eu sou o Cliente 12 de 50.
+2025-10-06 12:33:34 - Novo cliente adicionado. Total de clientes ativos: 13
+2025-10-06 12:33:34 - Nova conexão aceita: socket 18
+2025-10-06 12:33:34 - Novo cliente adicionado. Total de clientes ativos: 14
+2025-10-06 12:33:34 - Nova conexão aceita: socket 19
+2025-10-06 12:33:34 - Nova conexão aceita: socket 20
+2025-10-06 12:33:34 - Novo cliente adicionado. Total de clientes ativos: 15
+2025-10-06 12:33:34 - Novo cliente adicionado. Total de clientes ativos: 16
+2025-10-06 12:33:34 - Nova conexão aceita: socket 21
+2025-10-06 12:33:34 - Novo cliente adicionado. Total de clientes ativos: 17
+2025-10-06 12:33:34 - Broadcast - Cliente [21]: Olá, servidor! Eu sou o Cliente 17 de 50.
+2025-10-06 12:33:34 - Nova conexão aceita: socket 22
+2025-10-06 12:33:34 - Novo cliente adicionado. Total de clientes ativos: 18
+2025-10-06 12:33:34 - Nova conexão aceita: socket 23
+2025-10-06 12:33:34 - Nova conexão aceita: socket 24
+2025-10-06 12:33:34 - Novo cliente adicionado. Total de clientes ativos: 19
+2025-10-06 12:33:34 - Novo cliente adicionado. Total de clientes ativos: 20
+2025-10-06 12:33:34 - Broadcast - Cliente [23]: Olá, servidor! Eu sou o Cliente 19 de 50.
+2025-10-06 12:33:34 - Nova conexão aceita: socket 25
+2025-10-06 12:33:34 - Nova conexão aceita: socket 26
+2025-10-06 12:33:34 - Novo cliente adicionado. Total de clientes ativos: 21
+2025-10-06 12:33:34 - Broadcast - Cliente [25]: Olá, servidor! Eu sou o Cliente 21 de 50.
+2025-10-06 12:33:34 - Novo cliente adicionado. Total de clientes ativos: 22
+2025-10-06 12:33:34 - Nova conexão aceita: socket 27
+2025-10-06 12:33:34 - Nova conexão aceita: socket 28
+2025-10-06 12:33:34 - Novo cliente adicionado. Total de clientes ativos: 23
+2025-10-06 12:33:34 - Nova conexão aceita: socket 29
+2025-10-06 12:33:34 - Novo cliente adicionado. Total de clientes ativos: 24
+2025-10-06 12:33:34 - Novo cliente adicionado. Total de clientes ativos: 25
+2025-10-06 12:33:34 - Nova conexão aceita: socket 30
+2025-10-06 12:33:34 - Nova conexão aceita: socket 31
+2025-10-06 12:33:34 - Nova conexão aceita: socket 32
+2025-10-06 12:33:34 - Novo cliente adicionado. Total de clientes ativos: 26
+2025-10-06 12:33:34 - Novo cliente adicionado. Total de clientes ativos: 27
+2025-10-06 12:33:34 - Novo cliente adicionado. Total de clientes ativos: 28
+2025-10-06 12:33:34 - Nova conexão aceita: socket 33
+2025-10-06 12:33:34 - Nova conexão aceita: socket 34
+2025-10-06 12:33:34 - Novo cliente adicionado. Total de clientes ativos: 29
+2025-10-06 12:33:34 - Nova conexão aceita: socket 35
+2025-10-06 12:33:34 - Novo cliente adicionado. Total de clientes ativos: 30
+2025-10-06 12:33:34 - Novo cliente adicionado. Total de clientes ativos: 31
+2025-10-06 12:33:34 - Broadcast - Cliente [35]: Olá, servidor! Eu sou o Cliente 30 de 50.
+2025-10-06 12:33:34 - Nova conexão aceita: socket 36
+2025-10-06 12:33:34 - Novo cliente adicionado. Total de clientes ativos: 32
+2025-10-06 12:33:34 - Nova conexão aceita: socket 37
+2025-10-06 12:33:34 - Novo cliente adicionado. Total de clientes ativos: 33
+2025-10-06 12:33:34 - Nova conexão aceita: socket 38
+2025-10-06 12:33:34 - Novo cliente adicionado. Total de clientes ativos: 34
+2025-10-06 12:33:34 - Nova conexão aceita: socket 39
+2025-10-06 12:33:34 - Novo cliente adicionado. Total de clientes ativos: 35
+2025-10-06 12:33:34 - Broadcast - Cliente [39]: Olá, servidor! Eu sou o Cliente 35 de 50.
+2025-10-06 12:33:34 - Nova conexão aceita: socket 43
+2025-10-06 12:33:34 - Novo cliente adicionado. Total de clientes ativos: 36
+2025-10-06 12:33:34 - Nova conexão aceita: socket 44
+2025-10-06 12:33:34 - Nova conexão aceita: socket 45
+2025-10-06 12:33:34 - Novo cliente adicionado. Total de clientes ativos: 37
+2025-10-06 12:33:34 - Novo cliente adicionado. Total de clientes ativos: 38
+2025-10-06 12:33:34 - Nova conexão aceita: socket 46
+2025-10-06 12:33:34 - Nova conexão aceita: socket 47
+2025-10-06 12:33:34 - Novo cliente adicionado. Total de clientes ativos: 39
+2025-10-06 12:33:34 - Novo cliente adicionado. Total de clientes ativos: 40
+2025-10-06 12:33:34 - Nova conexão aceita: socket 48
+2025-10-06 12:33:34 - Novo cliente adicionado. Total de clientes ativos: 41
+2025-10-06 12:33:34 - Nova conexão aceita: socket 49
+2025-10-06 12:33:34 - Nova conexão aceita: socket 50
+2025-10-06 12:33:34 - Novo cliente adicionado. Total de clientes ativos: 42
+2025-10-06 12:33:34 - Novo cliente adicionado. Total de clientes ativos: 43
+2025-10-06 12:33:34 - Nova conexão aceita: socket 51
+2025-10-06 12:33:34 - Novo cliente adicionado. Total de clientes ativos: 44
+2025-10-06 12:33:34 - Nova conexão aceita: socket 52
+2025-10-06 12:33:34 - Nova conexão aceita: socket 53
+2025-10-06 12:33:34 - Novo cliente adicionado. Total de clientes ativos: 45
+2025-10-06 12:33:34 - Novo cliente adicionado. Total de clientes ativos: 46
+2025-10-06 12:33:34 - Nova conexão aceita: socket 54
+2025-10-06 12:33:34 - Novo cliente adicionado. Total de clientes ativos: 47
+2025-10-06 12:33:34 - Nova conexão aceita: socket 55
+2025-10-06 12:33:34 - Nova conexão aceita: socket 56
+2025-10-06 12:33:34 - Novo cliente adicionado. Total de clientes ativos: 48
+2025-10-06 12:33:34 - Nova conexão aceita: socket 57
+2025-10-06 12:33:34 - Novo cliente adicionado. Total de clientes ativos: 49
+2025-10-06 12:33:34 - Novo cliente adicionado. Total de clientes ativos: 50
+2025-10-06 12:33:34 - Broadcast - Cliente [57]: Olá, servidor! Eu sou o Cliente 50 de 50.
+2025-10-06 12:33:34 - Broadcast - Cliente [5]: Olá, servidor! Eu sou o Cliente 1 de 50.
+2025-10-06 12:33:34 - Broadcast - Cliente [6]: Olá, servidor! Eu sou o Cliente 3 de 50.
+2025-10-06 12:33:34 - Broadcast - Cliente [17]: Olá, servidor! Eu sou o Cliente 13 de 50.
+2025-10-06 12:33:34 - Broadcast - Cliente [20]: Olá, servidor! Eu sou o Cliente 15 de 50.
+2025-10-06 12:33:34 - Broadcast - Cliente [19]: Olá, servidor! Eu sou o Cliente 16 de 50.
+2025-10-06 12:33:34 - Broadcast - Cliente [22]: Olá, servidor! Eu sou o Cliente 18 de 50.
+2025-10-06 12:33:34 - Broadcast - Cliente [28]: Olá, servidor! Eu sou o Cliente 24 de 50.
+2025-10-06 12:33:34 - Broadcast - Cliente [29]: Olá, servidor! Eu sou o Cliente 25 de 50.
+2025-10-06 12:33:34 - Broadcast - Cliente [30]: Olá, servidor! Eu sou o Cliente 26 de 50.
+2025-10-06 12:33:34 - Broadcast - Cliente [31]: Olá, servidor! Eu sou o Cliente 28 de 50.
+2025-10-06 12:33:34 - Broadcast - Cliente [33]: Olá, servidor! Eu sou o Cliente 31 de 50.
+2025-10-06 12:33:34 - Broadcast - Cliente [45]: Olá, servidor! Eu sou o Cliente 38 de 50.
+2025-10-06 12:33:34 - Broadcast - Cliente [51]: Olá, servidor! Eu sou o Cliente 45 de 50.
+2025-10-06 12:33:34 - Broadcast - Cliente [56]: Olá, servidor! Eu sou o Cliente 49 de 50.
+2025-10-06 12:33:35 - Broadcast - Cliente [7]: Olá, servidor! Eu sou o Cliente 2 de 50.
+2025-10-06 12:33:35 - Broadcast - Cliente [11]: Olá, servidor! Eu sou o Cliente 7 de 50.
+2025-10-06 12:33:35 - Broadcast - Cliente [13]: Olá, servidor! Eu sou o Cliente 9 de 50.
+2025-10-06 12:33:35 - Broadcast - Cliente [27]: Olá, servidor! Eu sou o Cliente 23 de 50.
+2025-10-06 12:33:35 - Broadcast - Cliente [32]: Olá, servidor! Eu sou o Cliente 27 de 50.
+2025-10-06 12:33:35 - Broadcast - Cliente [34]: Olá, servidor! Eu sou o Cliente 29 de 50.
+2025-10-06 12:33:35 - Broadcast - Cliente [38]: Olá, servidor! Eu sou o Cliente 34 de 50.
+2025-10-06 12:33:35 - Broadcast - Cliente [44]: Olá, servidor! Eu sou o Cliente 37 de 50.
+2025-10-06 12:33:35 - Broadcast - Cliente [48]: Olá, servidor! Eu sou o Cliente 41 de 50.
+2025-10-06 12:33:35 - Broadcast - Cliente [10]: Olá, servidor! Eu sou o Cliente 6 de 50.
+2025-10-06 12:33:35 - Broadcast - Cliente [15]: Olá, servidor! Eu sou o Cliente 11 de 50.
+2025-10-06 12:33:35 - Broadcast - Cliente [26]: Olá, servidor! Eu sou o Cliente 22 de 50.
+2025-10-06 12:33:35 - Broadcast - Cliente [36]: Olá, servidor! Eu sou o Cliente 32 de 50.
+2025-10-06 12:33:35 - Broadcast - Cliente [37]: Olá, servidor! Eu sou o Cliente 33 de 50.
+2025-10-06 12:33:35 - Broadcast - Cliente [47]: Olá, servidor! Eu sou o Cliente 40 de 50.
+2025-10-06 12:33:35 - Broadcast - Cliente [54]: Olá, servidor! Eu sou o Cliente 47 de 50.
+2025-10-06 12:33:35 - Broadcast - Cliente [53]: Olá, servidor! Eu sou o Cliente 46 de 50.
+2025-10-06 12:33:35 - Broadcast - Cliente [8]: Olá, servidor! Eu sou o Cliente 4 de 50.
+2025-10-06 12:33:35 - Broadcast - Cliente [9]: Olá, servidor! Eu sou o Cliente 5 de 50.
+2025-10-06 12:33:35 - Broadcast - Cliente [12]: Olá, servidor! Eu sou o Cliente 8 de 50.
+2025-10-06 12:33:35 - Broadcast - Cliente [18]: Olá, servidor! Eu sou o Cliente 14 de 50.
+2025-10-06 12:33:35 - Broadcast - Cliente [24]: Olá, servidor! Eu sou o Cliente 20 de 50.
+2025-10-06 12:33:35 - Broadcast - Cliente [43]: Olá, servidor! Eu sou o Cliente 36 de 50.
+2025-10-06 12:33:35 - Broadcast - Cliente [46]: Olá, servidor! Eu sou o Cliente 39 de 50.
+2025-10-06 12:33:35 - Broadcast - Cliente [50]: Olá, servidor! Eu sou o Cliente 42 de 50.
+2025-10-06 12:33:35 - Broadcast - Cliente [49]: Olá, servidor! Eu sou o Cliente 43 de 50.
+2025-10-06 12:33:35 - Broadcast - Cliente [52]: Olá, servidor! Eu sou o Cliente 44 de 50.
+2025-10-06 12:33:35 - Broadcast - Cliente [55]: Olá, servidor! Eu sou o Cliente 48 de 50.
+2025-10-06 12:33:35 - Cliente removido. Total de clientes ativos: 49
+2025-10-06 12:33:35 - Conexão com o cliente [14] fechada. Thread finalizada.
+2025-10-06 12:33:35 - Cliente removido. Total de clientes ativos: 48
+2025-10-06 12:33:35 - Conexão com o cliente [16] fechada. Thread finalizada.
+2025-10-06 12:33:35 - Cliente removido. Total de clientes ativos: 47
+2025-10-06 12:33:35 - Conexão com o cliente [21] fechada. Thread finalizada.
+2025-10-06 12:33:35 - Cliente removido. Total de clientes ativos: 46
+2025-10-06 12:33:35 - Conexão com o cliente [23] fechada. Thread finalizada.
+2025-10-06 12:33:35 - Cliente removido. Total de clientes ativos: 45
+2025-10-06 12:33:35 - Conexão com o cliente [25] fechada. Thread finalizada.
+2025-10-06 12:33:35 - Cliente removido. Total de clientes ativos: 44
+2025-10-06 12:33:35 - Conexão com o cliente [35] fechada. Thread finalizada.
+2025-10-06 12:33:35 - Cliente removido. Total de clientes ativos: 43
+2025-10-06 12:33:35 - Conexão com o cliente [39] fechada. Thread finalizada.
+2025-10-06 12:33:35 - Cliente removido. Total de clientes ativos: 42
+2025-10-06 12:33:35 - Conexão com o cliente [57] fechada. Thread finalizada.
+2025-10-06 12:33:35 - Cliente removido. Total de clientes ativos: 41
+2025-10-06 12:33:35 - Conexão com o cliente [5] fechada. Thread finalizada.
+2025-10-06 12:33:35 - Cliente removido. Total de clientes ativos: 40
+2025-10-06 12:33:35 - Conexão com o cliente [6] fechada. Thread finalizada.
+2025-10-06 12:33:35 - Cliente removido. Total de clientes ativos: 39
+2025-10-06 12:33:35 - Conexão com o cliente [17] fechada. Thread finalizada.
+2025-10-06 12:33:35 - Cliente removido. Total de clientes ativos: 38
+2025-10-06 12:33:35 - Conexão com o cliente [20] fechada. Thread finalizada.
+2025-10-06 12:33:35 - Cliente removido. Total de clientes ativos: 37
+2025-10-06 12:33:35 - Conexão com o cliente [19] fechada. Thread finalizada.
+2025-10-06 12:33:35 - Cliente removido. Total de clientes ativos: 36
+2025-10-06 12:33:35 - Conexão com o cliente [22] fechada. Thread finalizada.
+2025-10-06 12:33:35 - Cliente removido. Total de clientes ativos: 35
+2025-10-06 12:33:35 - Conexão com o cliente [28] fechada. Thread finalizada.
+2025-10-06 12:33:35 - Cliente removido. Total de clientes ativos: 34
+2025-10-06 12:33:35 - Cliente removido. Total de clientes ativos: 33
+2025-10-06 12:33:35 - Conexão com o cliente [30] fechada. Thread finalizada.
+2025-10-06 12:33:35 - Conexão com o cliente [29] fechada. Thread finalizada.
+2025-10-06 12:33:35 - Cliente removido. Total de clientes ativos: 32
+2025-10-06 12:33:35 - Conexão com o cliente [31] fechada. Thread finalizada.
+2025-10-06 12:33:35 - Cliente removido. Total de clientes ativos: 31
+2025-10-06 12:33:35 - Conexão com o cliente [33] fechada. Thread finalizada.
+2025-10-06 12:33:35 - Cliente removido. Total de clientes ativos: 30
+2025-10-06 12:33:35 - Conexão com o cliente [45] fechada. Thread finalizada.
+2025-10-06 12:33:35 - Cliente removido. Total de clientes ativos: 29
+2025-10-06 12:33:35 - Conexão com o cliente [51] fechada. Thread finalizada.
+2025-10-06 12:33:35 - Cliente removido. Total de clientes ativos: 28
+2025-10-06 12:33:35 - Conexão com o cliente [56] fechada. Thread finalizada.
+2025-10-06 12:33:36 - Cliente removido. Total de clientes ativos: 27
+2025-10-06 12:33:36 - Conexão com o cliente [7] fechada. Thread finalizada.
+2025-10-06 12:33:36 - Cliente removido. Total de clientes ativos: 26
+2025-10-06 12:33:36 - Conexão com o cliente [11] fechada. Thread finalizada.
+2025-10-06 12:33:36 - Cliente removido. Total de clientes ativos: 25
+2025-10-06 12:33:36 - Conexão com o cliente [13] fechada. Thread finalizada.
+2025-10-06 12:33:36 - Cliente removido. Total de clientes ativos: 24
+2025-10-06 12:33:36 - Conexão com o cliente [27] fechada. Thread finalizada.
+2025-10-06 12:33:36 - Cliente removido. Total de clientes ativos: 23
+2025-10-06 12:33:36 - Conexão com o cliente [32] fechada. Thread finalizada.
+2025-10-06 12:33:36 - Cliente removido. Total de clientes ativos: 22
+2025-10-06 12:33:36 - Conexão com o cliente [34] fechada. Thread finalizada.
+2025-10-06 12:33:36 - Cliente removido. Total de clientes ativos: 21
+2025-10-06 12:33:36 - Conexão com o cliente [38] fechada. Thread finalizada.
+2025-10-06 12:33:36 - Cliente removido. Total de clientes ativos: 20
+2025-10-06 12:33:36 - Conexão com o cliente [44] fechada. Thread finalizada.
+2025-10-06 12:33:36 - Cliente removido. Total de clientes ativos: 19
+2025-10-06 12:33:36 - Conexão com o cliente [48] fechada. Thread finalizada.
+2025-10-06 12:33:36 - Cliente removido. Total de clientes ativos: 18
+2025-10-06 12:33:36 - Conexão com o cliente [10] fechada. Thread finalizada.
+2025-10-06 12:33:36 - Cliente removido. Total de clientes ativos: 17
+2025-10-06 12:33:36 - Conexão com o cliente [15] fechada. Thread finalizada.
+2025-10-06 12:33:36 - Cliente removido. Total de clientes ativos: 16
+2025-10-06 12:33:36 - Conexão com o cliente [26] fechada. Thread finalizada.
+2025-10-06 12:33:36 - Cliente removido. Total de clientes ativos: 15
+2025-10-06 12:33:36 - Conexão com o cliente [37] fechada. Thread finalizada.
+2025-10-06 12:33:36 - Cliente removido. Total de clientes ativos: 14
+2025-10-06 12:33:36 - Conexão com o cliente [36] fechada. Thread finalizada.
+2025-10-06 12:33:36 - Cliente removido. Total de clientes ativos: 13
+2025-10-06 12:33:36 - Conexão com o cliente [47] fechada. Thread finalizada.
+2025-10-06 12:33:36 - Cliente removido. Total de clientes ativos: 12
+2025-10-06 12:33:36 - Conexão com o cliente [54] fechada. Thread finalizada.
+2025-10-06 12:33:36 - Cliente removido. Total de clientes ativos: 11
+2025-10-06 12:33:36 - Conexão com o cliente [53] fechada. Thread finalizada.
+2025-10-06 12:33:36 - Cliente removido. Total de clientes ativos: 10
+2025-10-06 12:33:36 - Cliente removido. Total de clientes ativos: 9
+2025-10-06 12:33:36 - Conexão com o cliente [9] fechada. Thread finalizada.
+2025-10-06 12:33:36 - Conexão com o cliente [8] fechada. Thread finalizada.
+2025-10-06 12:33:36 - Cliente removido. Total de clientes ativos: 8
+2025-10-06 12:33:36 - Conexão com o cliente [12] fechada. Thread finalizada.
+2025-10-06 12:33:36 - Cliente removido. Total de clientes ativos: 7
+2025-10-06 12:33:36 - Conexão com o cliente [18] fechada. Thread finalizada.
+2025-10-06 12:33:36 - Cliente removido. Total de clientes ativos: 6
+2025-10-06 12:33:36 - Conexão com o cliente [24] fechada. Thread finalizada.
+2025-10-06 12:33:36 - Cliente removido. Total de clientes ativos: 5
+2025-10-06 12:33:36 - Conexão com o cliente [43] fechada. Thread finalizada.
+2025-10-06 12:33:36 - Cliente removido. Total de clientes ativos: 4
+2025-10-06 12:33:36 - Conexão com o cliente [46] fechada. Thread finalizada.
+2025-10-06 12:33:36 - Cliente removido. Total de clientes ativos: 3
+2025-10-06 12:33:36 - Conexão com o cliente [50] fechada. Thread finalizada.
+2025-10-06 12:33:36 - Cliente removido. Total de clientes ativos: 2
+2025-10-06 12:33:36 - Conexão com o cliente [52] fechada. Thread finalizada.
+2025-10-06 12:33:36 - Cliente removido. Total de clientes ativos: 1
+2025-10-06 12:33:36 - Conexão com o cliente [49] fechada. Thread finalizada.
+2025-10-06 12:33:36 - Cliente removido. Total de clientes ativos: 0
+2025-10-06 12:33:36 - Conexão com o cliente [55] fechada. Thread finalizada.

@@ -1,0 +1,65 @@
+Mapeamento Requisitos -> Código
+---------------------------------------------------------------------
+
+**Requisitos Gerais**
+
+1.  **Threads (`std::thread` ou `pthreads`)**:
+    * **Código:** `server.cpp` (na função `main`, `std::thread` é criada para cada cliente), `client.cpp` (na função `main`, `std::thread` é criada para a função `receive_messages`).
+    * **Descrição:** O servidor implementa o padrão "thread-por-cliente". O cliente utiliza uma thread para envio (principal) e outra para recebimento, garantindo uma interface não-bloqueante.
+
+2.  **Exclusão Mútua**:
+    * **Código:** `ClientManager.cpp` e `tslog.cpp`.
+    * **Descrição:** Ambas as classes utilizam `std::mutex` e `std::lock_guard` para garantir acesso exclusivo a recursos compartilhados (`std::vector` de clientes e `std::ofstream` do log, respectivamente).
+
+3.  **Semáforos e `condvars`**:
+    * **Código:** `client.cpp`.
+    * **Descrição:** O conceito de sinalização entre threads foi implementado de forma moderna com `std::atomic<bool> keep_running`, que coordena o encerramento seguro entre a thread principal (envio) e a de recebimento.
+
+4.  **Monitores**:
+    * **Código:** Classes `ClientManager` e `ThreadSafeLogger` (`.hpp` e `.cpp`).
+    * **Descrição:** Ambas as classes são implementações do padrão Monitor, encapsulando os dados compartilhados e a lógica de sincronização, expondo uma interface pública segura.
+
+5.  **Sockets**:
+    * **Código:** `server.cpp` e `client.cpp`.
+    * **Descrição:** Uso extensivo da API de Sockets para a comunicação TCP, incluindo as chamadas `socket`, `bind`, `listen`, `accept`, `connect`, `send` e `recv`.
+
+6.  **Gerenciamento de Recursos**:
+    * **Código:** `ClientManager.cpp`, `tslog.cpp`, `server.cpp`.
+    * **Descrição:** O princípio RAII é aplicado com o uso de `std::lock_guard`. Os sockets são devidamente fechados ao final de suas vidas úteis.
+
+7.  **Tratamento de Erros**:
+    * **Código:** `server.cpp` e `client.cpp`.
+    * **Descrição:** Uso de blocos `try...catch` para capturar `std::runtime_error` e lidar com falhas de inicialização ou comunicação, garantindo a robustez da aplicação.
+
+8.  **Logging Concorrente**:
+    * **Código:** `tslog.cpp` e seu uso em `server.cpp` e `client.cpp`.
+    * **Descrição:** A biblioteca `libtslog` é utilizada para registrar todos os eventos importantes do sistema de forma segura a partir de múltiplas threads.
+
+9.  **Documentação**:
+    * **Código:** Diagrama de sequência criado com Mermaid.
+    * **Descrição:** A documentação visualiza a interação complexa entre as threads e componentes do sistema.
+
+10. **Build**:
+    * **Código:** `Makefile`.
+    * **Descrição:** Automatiza o processo de compilação do servidor e do cliente, incluindo as flags necessárias (`-std=c++17`, `-pthread`).
+
+11. **Uso de IA/LLMs**:
+    * **Código:** Relatório de Análise com IA.
+    * **Descrição:** Documenta a utilização da IA para análise crítica, revisão de código, geração de testes e documentação.
+
+**Requisitos do Tema A - Servidor de Chat Multiusuário**
+
+* **Servidor TCP concorrente aceitando múltiplos clientes**:
+    * **Código:** `server.cpp` (loop `accept` na `main`).
+
+* **Cada cliente atendido por thread; mensagens retransmitidas (broadcast)**:
+    * **Código:** `server.cpp` (função `handle_client` executada em uma `std::thread`), `ClientManager.cpp` (método `broadcast`).
+
+* **Logging concorrente de mensagens**:
+    * **Código:** `tslog.cpp` e sua integração com `server.cpp`.
+
+* **Cliente CLI: conectar, enviar/receber mensagens**:
+    * **Código:** `client.cpp`.
+
+* **Proteção de estruturas compartilhadas (lista de clientes, histórico)**:
+    * **Código:** `ClientManager.cpp` (proteção do `std::vector<int> active_clients` com `std::mutex`).

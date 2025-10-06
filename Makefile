@@ -14,7 +14,10 @@ OBJ_DIR := build
 
 # Alvo 1: Servidor de Chat
 SERVER_EXEC := chat_server
-SERVER_SRCS := $(SRC_DIR)/server.cpp $(SRC_DIR)/tslog.cpp
+# *****************************************************************
+# * MUDANÇA AQUI: Adiciona o arquivo de implementação do Monitor *
+# *****************************************************************
+SERVER_SRCS := $(SRC_DIR)/server.cpp $(SRC_DIR)/tslog.cpp $(SRC_DIR)/ClientManager.cpp
 SERVER_OBJS := $(patsubst $(SRC_DIR)/%.cpp, $(OBJ_DIR)/%.o, $(SERVER_SRCS))
 
 # Alvo 2: Cliente do Chat (já preparado para quando criarmos o client.cpp)

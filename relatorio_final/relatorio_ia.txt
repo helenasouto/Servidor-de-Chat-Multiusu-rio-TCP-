@@ -1,0 +1,54 @@
+Relatório de Análise de Concorrência com Auxílio de IA
+---------------------------------------------------------------------
+
+**Introdução**
+
+Este relatório detalha o uso de um Large Language Model (LLM) como ferramenta de suporte e análise crítica ao longo das três etapas do projeto. A IA foi utilizada como um "parceiro de programação" para validar a arquitetura, refinar implementações de sincronização, gerar scripts de teste e criar documentação técnica, com foco na robustez e na prevenção de problemas de concorrência.
+
+**Etapa 1: Arquitetura e Logging Thread-Safe**
+
+Na fase inicial, a IA foi consultada para validar o design e as boas práticas do projeto.
+
+* **Prompt 1: Análise de Condições de Corrida (Race Conditions)**
+    >   **Prompt Enviado à IA:** "Analise o seguinte esqueleto de uma biblioteca de logging em C++ (tslog.hpp e tslog.cpp). O objetivo é que ela seja 'thread-safe'. Identifique a principal condição de corrida no acesso ao arquivo de log e sugira a implementação de um mecanismo de exclusão mútua para proteger este recurso compartilhado, seguindo as melhores práticas de C++ moderno."
+    >   **Resumo da Resposta da IA:** A IA confirmou que `std::ofstream` era um recurso compartilhado vulnerável. A sugestão foi utilizar `std::mutex` e, crucialmente, `std::lock_guard` para implementar o princípio RAII, garantindo que o mutex seja sempre liberado e prevenindo deadlocks.
+
+* **Prompt 2: Validação do Teste de Concorrência**
+    >   **Prompt Enviado à IA:** "Para validar a `libtslog`, minha ideia é criar um teste que lance várias `std::thread`s para escreverem no log ao mesmo tempo. Qual seria a abordagem correta para compartilhar a mesma instância do logger entre as threads e, principalmente, como garantir que a função `main` espere que todas as threads terminem seu trabalho antes de encerrar? Você pode me mostrar um exemplo de código focado na lógica de `join()` para múltiplas threads?"
+    >   **Resumo da Resposta da IA:** A IA validou a abordagem e forneceu um esqueleto de código para o `main.cpp` focado na lógica de gerenciamento e sincronização das threads. A sugestão incluiu o compartilhamento do logger via referência e a implementação correta do loop de `th.join()`, garantindo que o programa principal aguardasse a conclusão de todas as threads para um teste completo.
+
+* **Prompt 3: Estrutura do Sistema de Build**
+    >   **Prompt Enviado à IA:** "Estou estruturando meu projeto com os diretórios `include/` e `src/`. Para o `Makefile`, sei que preciso usar a flag `-Iinclude` para os cabeçalhos e `-pthread` para as threads em C++17. Você pode me ajudar a estruturar um `Makefile` que use variáveis e regras padrão para compilar todos os arquivos `.cpp` do diretório `src/` e gerar o executável final? Quero ter certeza de que estou seguindo as boas práticas."
+    >   **Resumo da Resposta da IA:** A IA forneceu um `Makefile` bem estruturado, utilizando variáveis para os diretórios e compiladores, e implementando regras que automatizam a compilação. A estrutura sugerida facilitou a organização e a manutenção do processo de build do projeto.
+
+**Etapa 2: Protótipo CLI de Comunicação**
+
+Nesta fase, a IA auxiliou a refinar a implementação funcional da comunicação em rede.
+
+* **Prompt 1: Validação da Arquitetura do Servidor**
+    >   **Prompt Enviado à IA:** "Minha arquitetura para o servidor TCP se baseia no padrão 'uma thread por cliente', onde o loop principal fica em `accept()` e despacha novos sockets para `std::thread`s. Poderia me ajudar a validar se a integração da `libtslog` nesta fase inicial (para logar conexões) e o uso de `std::thread::detach()` são abordagens robustas para este modelo?"
+    >   **Resumo da Resposta da IA:** A IA validou a arquitetura como um padrão robusto e comum. Explicou que `detach()` era uma escolha aceitável para este cenário de servidor de longa duração, desde que a thread do cliente gerenciasse seu próprio ciclo de vida e recursos, o que estava correto no projeto.
+
+* **Prompt 2: Refinamento da Lógica de Broadcast**
+    >   **Prompt Enviado à IA:** "Para a lógica de broadcast, planejo usar um `std::vector` para armazenar os sockets dos clientes, que será um recurso compartilhado. Minha hipótese é que preciso protegê-lo com um `std::mutex`. Você poderia confirmar se esta é a abordagem correta e me mostrar um exemplo de como o `std::lock_guard` seria aplicado na iteração do vetor para evitar que um cliente seja removido enquanto outro está fazendo o broadcast?"
+    >   **Resumo da Resposta da IA:** A IA confirmou a abordagem como a solução correta e forneceu um exemplo de código para a iteração segura, enfatizando que o `lock_guard` deveria abranger todo o loop de `for` para garantir a integridade do vetor durante a operação completa de broadcast.
+
+* **Prompt 3: Otimização do Cliente Concorrente**
+    >   **Prompt Enviado à IA:** "O cliente CLI monothread está sofrendo com I/O bloqueante. Minha solução é refatorá-lo para um design multithread: uma thread principal para a entrada do usuário (envio) e uma thread secundária para `recv()` (recebimento). Qual seria o mecanismo de sinalização mais eficiente e seguro para coordenar o encerramento limpo dessas duas threads?"
+    >   **Resumo da Resposta da IA:** A IA validou a arquitetura multithread como a solução ideal e recomendou o uso de `std::atomic<bool>` como um mecanismo de sinalização leve e seguro entre as threads, sendo mais eficiente que um mutex para este caso de uso específico.
+
+**Etapa 3: Sistema Completo e Análise de Robustez**
+
+Na fase final, a IA foi usada para uma análise crítica da robustez do sistema sob estresse.
+
+* **Prompt 1: Análise de Robustez sob Estresse**
+    >   **Prompt Enviado:** "Analisando meu código-fonte completo, o servidor é robusto o suficiente para suportar uma situação de estresse com 50 clientes conectando-se simultaneamente? Qual é o principal ponto de contenção e como a minha implementação o mitiga?"
+    >   **Resumo da Resposta da IA:** A IA identificou que o ponto de contenção era o acesso à lista de clientes. A análise confirmou que a classe `ClientManager` implementa corretamente o **Padrão Monitor**. O uso de `std::lock_guard` em todos os métodos de acesso elimina a condição de corrida e garante a integridade da lista mesmo sob alta pressão.
+
+* **Prompt 2: Validação da Prova de Concorrência**
+    >   **Prompt Enviado:** "Criei um script de estresse (`stress.sh`) que lança 50 clientes em segundo plano. Analise o `chat_server.log` gerado. Este log serve como prova de que a exclusão mútua funcionou?"
+    >   **Resumo da Resposta da IA:** A IA confirmou que o log era a prova definitiva. O fato de o servidor ter aceitado 50 conexões em milissegundos e o contador de clientes ativos ter incrementado sequencialmente de 1 a 50 prova que a exclusão mútua imposta pelo `ClientManager` manteve a integridade do estado compartilhado.
+
+**Conclusão Final**
+
+A utilização da IA foi fundamental em todo o ciclo de vida do projeto. Ela atuou como uma ferramenta de validação de design, revisão de código e geração de documentação. A habilidade de formular perguntas que demonstram a iniciativa da desenvolvedora e receber respostas detalhadas e contextuais para refinar a implementação aumentou a qualidade e a robustez do produto final, garantindo que as melhores práticas de programação concorrente fossem implementadas e, mais importante, comprovadas.
